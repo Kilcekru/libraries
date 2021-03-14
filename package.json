@@ -1,0 +1,30 @@
+{
+	"name": "@kilcekru/libraries",
+	"version": "1.0.0",
+	"description": "npm packages",
+	"private": true,
+	"license": "ISC",
+	"author": {
+		"name": "Andreas Lackinger",
+		"email": "kilcekru@unkreativ.at"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kilcekru/libraries.git"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"scripts": {
+		"cz": "cz"
+	},
+	"devDependencies": {
+		"commitizen": "^4.2.3",
+		"cz-conventional-changelog": "^3.3.0"
+	}
+}
