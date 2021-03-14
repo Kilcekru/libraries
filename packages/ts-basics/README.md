@@ -71,6 +71,16 @@ For this to work it is necessary that all typescript file are included in a `tsc
 and this tsconfig files need to be set in `parserOptions.project`.
 Eslint will throw an error, if a file is not referenced correctly.
 
+If you have typescript files, that are not part of your build (config, tests),  
+you can create a `tsconfig.eslint.json` which just includes those files (don't forget to add this file to `parserOptions.project`).
+```json
+{
+	"extends": "@kilcekru/ts-basics/tsconfig-node-base.json",
+	"include": ["config/**/*", "tests/**/*"]
+}
+```
+
+
 **Performance**  
 Eslint gets exponential slower on bigger projects.  
 If you use it in a monorepo, create a separate .eslintrc.js for each package.  
