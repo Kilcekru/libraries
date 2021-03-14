@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"removeComments": true,
+		"skipLibCheck": true,
+		"sourceMap": false,
+		"strict": true
+	},
+	"compileOnSave": false
+}
