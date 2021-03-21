@@ -21,7 +21,7 @@ module.exports = {
 		],
 		"import/no-extraneous-dependencies": [
 			"error",
-			{ peerDependencies: false, devDependencies: false }, // don't allow import/require of dev- or peerDependencies
+			{ peerDependencies: false }, // don't allow import/require of missing or peerDependencies
 		],
 	},
 	overrides: [
@@ -33,21 +33,10 @@ module.exports = {
 				"plugin:import/typescript",
 			],
 			rules: {
+				"react/prop-types": "off", // doesn't play well with Utility Types, props need to be typed anyway
+				"@typescript-eslint/explicit-module-boundary-types": "off",
+				"@typescript-eslint/no-namespace": "off",
 				"@typescript-eslint/require-await": "off", // functions implementing a type sometimes have to return Promise even without await. async is easier than multiple Promise.resolve
-			},
-		},
-		{
-			files: [
-				"jest.config.js",
-				"webpack.config.js",
-				"**/scripts/*",
-				"*.test.tsx",
-			],
-			rules: {
-				"import/no-extraneous-dependencies": [
-					"error",
-					{ peerDependencies: false },
-				], // config and scripts may import devDependencies
 			},
 		},
 	],
