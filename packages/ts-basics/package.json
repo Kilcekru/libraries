@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -17,10 +17,8 @@
 		"url": "git+https://github.com/Kilcekru/libraries.git",
 		"directory": "packages/ts-basics"
 	},
-	"publishConfig": {
-		"registry": "https://registry.npmjs.org/",
-		"access": "public"
-	},
+	"homepage": "https://github.com/Kilcekru/libraries/tree/main/packages/ts-basics#readme",
+	"bugs": "https://github.com/Kilcekru/libraries/issues",
 	"engines": {
 		"node": ">=12"
 	},
