@@ -10,26 +10,20 @@ Provides basic configuration for typescript and eslint.
 
 `npm i -D @kilcekru/ts-basics`
 
-ts-basics has a peer dependency on typescript >= 4.1
+ts-basics has a peer dependency on typescript >= 4.1  
 `npm i -D typescript@latest`
 
 ## tsconfig
 
 There are four flavours available:
-- `tsconfig-node-base`: for node >=14; use this for scripts and services
-- `tsconfig-node-library`: for node >=14; use this for libraries (enables declaration files)
-- `tsconfig-react-base`: for browser; use this for a project (es2019 is used, support for older browsers not given)
+- `tsconfig-node-base`: for node >=12; use this for scripts and services
+- `tsconfig-node-library`: for node >=12; use this for libraries (enables declaration files)
+- `tsconfig-react-base`: for browser; use this for apps (es2019 is used, support for older browsers not given)
 - `tsconfig-react-library`: for browser, use this for libraries (enables declaration files)
 
-To use one of those flavours, just extend your tsconfig from it:
-```json
-{
-	"extends": "@kilcekru/ts-basics/tsconfig-node-base.json",
-}
-```
-
+To use one of those flavours, just extend your tsconfig from it:  
 This will give you the basic configuration, but does not specify any paths.  
-You still have to setup include, outDir,...
+You still have to add `include`, `outDir`,...
 
 *Example*:
 ```json
