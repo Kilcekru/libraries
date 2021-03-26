@@ -1,5 +1,5 @@
 {
-	"extends": "./tsconfig-react-base.json",
+	"extends": "./tsconfig-react-app.json",
 	"compilerOptions": {
 		"declaration": true
 	}

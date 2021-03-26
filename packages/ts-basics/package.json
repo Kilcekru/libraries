@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -30,6 +30,7 @@
 		"tsconfig-react-base.json",
 		"tsconfig-react-library.json"
 	],
+	"sideEffects": false,
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "4.18.0",
 		"@typescript-eslint/parser": "4.18.0",

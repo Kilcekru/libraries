@@ -16,9 +16,9 @@ ts-basics has a peer dependency on typescript >= 4.1
 ## tsconfig
 
 There are four flavours available:
-- `tsconfig-node-base`: for node >=12; use this for scripts and services
+- `tsconfig-node-app`: for node >=12; use this for nodejs apps
 - `tsconfig-node-library`: for node >=12; use this for libraries (enables declaration files)
-- `tsconfig-react-base`: for browser; use this for apps (es2019 is used, support for older browsers not given)
+- `tsconfig-react-app`: for browser; use this for react apps (es2019 is used, support for older browsers not given)
 - `tsconfig-react-library`: for browser, use this for libraries (enables declaration files)
 
 To use one of those flavours, just extend your tsconfig from it:  
@@ -28,7 +28,7 @@ You still have to add `include`, `outDir`,...
 *Example*:
 ```json
 {
-	"extends": "@kilcekru/ts-basics/tsconfig-node-base.json",
+	"extends": "@kilcekru/ts-basics/tsconfig-node-app.json",
 	"compilerOptions": {
 		"outDir": "dist",
 	},
@@ -66,14 +66,13 @@ and this tsconfig files need to be set in `parserOptions.project`.
 Eslint will throw an error, if a file is not referenced correctly.
 
 If you have typescript files, that are not part of your build (config, tests),  
-you can create a `tsconfig.eslint.json` which just includes those files (don't forget to add this file to `parserOptions.project`).
+you can create a `tsconfig.eslint.json` which just includes those files (don't forget to add this file to `parserOptions.project` in the `.eslintrc.js`).
 ```json
 {
-	"extends": "@kilcekru/ts-basics/tsconfig-node-base.json",
+	"extends": "@kilcekru/ts-basics/tsconfig-node-app.json",
 	"include": ["config/**/*", "tests/**/*"]
 }
 ```
-
 
 **Performance**  
 Eslint gets exponential slower on bigger projects.  
