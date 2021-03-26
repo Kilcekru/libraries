@@ -16,8 +16,7 @@
 		"url": "git+https://github.com/Kilcekru/libraries.git"
 	},
 	"engines": {
-		"node": ">=12",
-		"npm": ">=7"
+		"node": ">=12"
 	},
 	"config": {
 		"commitizen": {
