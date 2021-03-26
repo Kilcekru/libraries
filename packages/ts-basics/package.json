@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -25,9 +25,9 @@
 	"files": [
 		".eslintrc.js",
 		"tsconfig-base.json",
-		"tsconfig-node-base.json",
+		"tsconfig-node-app.json",
 		"tsconfig-node-library.json",
-		"tsconfig-react-base.json",
+		"tsconfig-react-app.json",
 		"tsconfig-react-library.json"
 	],
 	"sideEffects": false,
