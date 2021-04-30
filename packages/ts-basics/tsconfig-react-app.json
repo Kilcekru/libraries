@@ -2,8 +2,8 @@
 	"extends": "./tsconfig-base.json",
 	"compilerOptions": {
 		"jsx": "react",
-		"lib": ["dom", "scripthost", "es2018"],
-		"module": "es2020",
-		"target": "es2018"
+		"lib": ["DOM", "DOM.Iterable", "ES2018"],
+		"module": "ES2020",
+		"target": "ES2018"
 	}
 }
