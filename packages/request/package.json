@@ -1,0 +1,50 @@
+{
+	"name": "@kilcekru/request",
+	"version": "0.1.0",
+	"description": "Logging for browser and node",
+	"keywords": [
+		"logging",
+		"logger",
+		"logs"
+	],
+	"license": "ISC",
+	"author": {
+		"name": "Andreas Lackinger",
+		"email": "kilcekru@unkreativ.at"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kilcekru/libraries.git",
+		"directory": "packages/logging"
+	},
+	"homepage": "https://github.com/Kilcekru/libraries/tree/main/packages/logging#readme",
+	"bugs": "https://github.com/Kilcekru/libraries/issues",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "run-s clean build:bundle",
+		"build:bundle": "rollup -c",
+		"clean": "rimraf dist",
+		"clean:all": "rimraf dist node-modules",
+		"lint": "eslint --cache src",
+		"lint:nocache": "eslint src",
+		"prepublishOnly": "npm run build"
+	},
+	"sideEffects": false,
+	"main": "./dist/node.js",
+	"browser": "./dist/browser.js",
+	"types": "./index.d.ts",
+	"devDependencies": {
+		"@kilcekru/ts-basics": "2.0.1",
+		"@rollup/plugin-node-resolve": "^11.2.1",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.44.0",
+		"typescript": "^4.2.4"
+	},
+	"dependencies": {
+		"abort-controller": "^3.0.0",
+		"node-fetch": "^2.6.1"
+	}
+}
