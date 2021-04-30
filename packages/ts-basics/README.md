@@ -59,6 +59,9 @@ module.exports = {
 };
 ```
 
+Don't forget to add a file called `.eslintignore` in your project root.  
+Specify all files that don't need linting (like node_modules and build artifacts)
+
 **Eslint and typescript**  
 `@typescript-eslint/parser` is used for all typescript files.  
 For this to work it is necessary that all typescript file are included in a `tsconfig.json` file  
