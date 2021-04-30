@@ -1,11 +1,13 @@
 {
 	"name": "@kilcekru/request",
 	"version": "0.1.0",
-	"description": "Logging for browser and node",
+	"description": "Simple http requests for browser and node",
 	"keywords": [
-		"logging",
-		"logger",
-		"logs"
+		"fetch",
+		"request",
+		"http",
+		"ajax",
+		"promise"
 	],
 	"license": "ISC",
 	"author": {
@@ -15,9 +17,9 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Kilcekru/libraries.git",
-		"directory": "packages/logging"
+		"directory": "packages/request"
 	},
-	"homepage": "https://github.com/Kilcekru/libraries/tree/main/packages/logging#readme",
+	"homepage": "https://github.com/Kilcekru/libraries/tree/main/packages/request#readme",
 	"bugs": "https://github.com/Kilcekru/libraries/issues",
 	"files": [
 		"dist"
