@@ -24,10 +24,16 @@
 		}
 	},
 	"scripts": {
-		"cz": "cz"
+		"cz": "cz",
+		"clean:all": "lerna exec -- rm -rf node_modules dist && rm -rf node_modules",
+		"build": "lerna run build",
+		"lint": "lerna run lint",
+		"lint:nocache": "lerna run lint:nocache",
+		"setup": "npm ci && lerna bootstrap --ci"
 	},
 	"devDependencies": {
 		"commitizen": "^4.2.3",
-		"cz-conventional-changelog": "^3.3.0"
+		"cz-conventional-changelog": "^3.3.0",
+		"lerna": "^4.0.0"
 	}
 }
