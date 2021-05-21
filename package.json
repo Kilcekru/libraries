@@ -29,11 +29,14 @@
 		"build": "lerna run build",
 		"lint": "lerna run lint",
 		"lint:nocache": "lerna run lint:nocache",
+		"prettier": "prettier --check .",
+		"prettier:fix": "prettier --write .",
 		"setup": "npm ci && lerna bootstrap --ci"
 	},
 	"devDependencies": {
 		"commitizen": "^4.2.3",
 		"cz-conventional-changelog": "^3.3.0",
-		"lerna": "^4.0.0"
+		"lerna": "^4.0.0",
+		"prettier": "^2.3.0"
 	}
 }

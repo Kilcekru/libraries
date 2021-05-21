@@ -6,3 +6,4 @@ package-lock.json
 .prettierignore
 .gitignore
 .eslintcache
+coverage
