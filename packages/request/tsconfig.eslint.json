@@ -1,4 +1,0 @@
-{
-	"extends": "@kilcekru/ts-basics/tsconfig-node-app.json",
-	"include": ["index.d.ts"]
-}

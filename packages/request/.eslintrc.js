@@ -6,7 +6,7 @@ module.exports = {
 	},
 	parserOptions: {
 		tsconfigRootDir: __dirname,
-		project: ["./tsconfig.eslint.json"],
+		project: ["./tsconfig.json"],
 	},
 	extends: [require.resolve("@kilcekru/ts-basics/.eslintrc.js")],
 };

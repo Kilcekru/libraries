@@ -101,7 +101,7 @@ Request headers.
 *Example*
 ```typescript
 headers: {
-	"Content-Type": "text/html; charset=UTF-8"
+	"content-type": "text/html; charset=UTF-8"
 }
 ```
 </details>
@@ -113,7 +113,7 @@ headers: {
 body?: string | Record<string, unknown> | unknown[];
 ```
 Request body.  
-If the given body is an object or an array, it will be stringified and the `Content-Type` header will be set to `application/json`.  
+If the given body is an object or an array, it will be stringified and the `content-type` header will be set to `application/json`.  
 If the body is a string, no header will be set.
 </details>
 
@@ -153,13 +153,14 @@ controller.abort();
 <summary>response</summary>
 
 ```typescript
-response?: false | "detect" | "arrayBuffer" | "json" | "blob" | "text" | "stream"; // default: "detect"
+response?: false | "detect" | "arrayBuffer" | "json" | "text" | "stream" | "raw"; // default: "detect"
 ```
 Define how the response body will be parsed.  
 - false: will discard the responseBody (might be faster if you only care about response status)
-- detect: use content-type of response. `application/json` will be parse as json, `text/*` will be parsed as text
-- arrayBuffer, json, blob, text: use the according function of the response
-- return the raw response, which is a readable stream
+- detect: use content-type of response. `application/json` will be parsed as json, `text/*` will be parsed as text
+- arrayBuffer, json, text: use the according function of the response
+- stream: return a readable stream
+- raw: return the raw response from fetch
 </details>
 
 <details>
@@ -181,7 +182,7 @@ If a number is given, it is treated the same as `{total: number}`
 - body: Maximum time from start of body parsing (after headers are parsed) until body parsing is finished.
 </details>
 
-<details open>
+<details>
 <summary>retry</summary>
 
 ```typescript
