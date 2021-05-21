@@ -1,7 +1,10 @@
 import { createRequestObj } from "./core";
 
 const AbortController = window.AbortController;
-export { AbortController };
+const AbortSignal = window.AbortSignal;
+
+export { AbortController, AbortSignal };
+export { ResponseError, TimeoutError, AbortError, FetchError } from "./core/errors";
 
 export const createRequest = (defaultOptions) =>
 	createRequestObj({

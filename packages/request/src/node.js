@@ -1,12 +1,13 @@
 import * as http from "http";
 import * as https from "https";
 
-import { AbortController } from "abort-controller";
+import { AbortController, AbortSignal } from "abort-controller";
 import fetch from "node-fetch";
 
 import { createRequestObj } from "./core";
 
-export { AbortController };
+export { ResponseError, TimeoutError, AbortError, FetchError } from "./core/errors";
+export { AbortController, AbortSignal };
 
 const httpAgent = new http.Agent({
 	keepAlive: true,

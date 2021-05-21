@@ -1,4 +1,4 @@
-import { ResponseError, TimeoutError } from "./errors";
+import { AbortError, FetchError, ResponseError, TimeoutError } from "./errors";
 import { parseBody, getOptions, checkRetry, sleep } from "./utils";
 
 export const createRequestObj = ({ fetch, AbortController, defaultAgent, defaultOptions }) => {
@@ -36,14 +36,17 @@ export const createRequestObj = ({ fetch, AbortController, defaultAgent, default
 				timeouts.body = setTimeout(() => abort("body"), options.timeout.body);
 			}
 
-			if (!res.ok) {
+			const ok = options.response.errorStatus ? !options.response.errorStatus(res.status) : res.ok;
+			if (!ok) {
+				const body = await parseBody(res, options.response.errorBody);
 				throw new ResponseError({
 					message: `Response not ok`,
 					status: res.status,
+					body,
 				});
 			}
 
-			const body = await parseBody(res, options.parse);
+			const body = await parseBody(res, options.response.body);
 
 			if (timeouts.body) {
 				clearTimeout(timeouts.body);
@@ -59,28 +62,43 @@ export const createRequestObj = ({ fetch, AbortController, defaultAgent, default
 			for (const timeout of Object.values(timeouts)) {
 				clearTimeout(timeout);
 			}
-			if (abortReason && err.name === "AbortError") {
-				throw new TimeoutError({
-					message: "The request timed out",
-					reason: abortReason,
-				});
+			if (err instanceof ResponseError) {
+				throw err;
 			}
-			throw err;
+			if (err.name === "AbortError") {
+				if (abortReason) {
+					throw new TimeoutError({
+						message: "The request timed out",
+						reason: abortReason,
+					});
+				} else {
+					throw new AbortError({
+						message: "The request has been aborted",
+					});
+				}
+			}
+			throw new FetchError({
+				message: err.message,
+				stack: err.stack,
+				type: err.type,
+				errno: err.errno,
+				code: err.code,
+			});
 		}
 	};
 
 	const request = async (requestOptions) => {
 		const options = getOptions(requestOptions, defaultRequestOptions);
 		// request body
-		const headers = options.headers ? { ...options.headers } : {};
+		const headers = options.headers ? { ...options.headers } : {}; // TODO: create headers object (case-insensitivity)
 		let reqBody;
 		if (options.body != undefined) {
 			if (typeof options.body === "string") {
 				reqBody = options.body;
 			} else {
 				reqBody = JSON.stringify(options.body);
-				if (!headers["Content-Type"]) {
-					headers["Content-Type"] = "application/json";
+				if (!headers["content-type"]) {
+					headers["content-type"] = "application/json";
 				}
 			}
 		}

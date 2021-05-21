@@ -10,8 +10,8 @@ function getUrl(url) {
 
 export async function parseBody(res, parse) {
 	if (parse == undefined || parse === "detect") {
-		const contentType = res.headers.get("content-type")?.split(";")[0];
-		if (contentType === "application/json") {
+		const contentType = res.headers.get("content-type");
+		if (contentType?.startsWith("application/json")) {
 			parse = "json";
 		} else if (contentType?.startsWith("text/")) {
 			parse = "text";
@@ -24,14 +24,14 @@ export async function parseBody(res, parse) {
 		case "json": {
 			return await res.json();
 		}
-		case "blob": {
-			return await res.blob();
-		}
 		case "text": {
 			return await res.text();
 		}
 		case "stream": {
 			return res.body;
+		}
+		case "raw": {
+			return res;
 		}
 	}
 }
@@ -46,24 +46,21 @@ export function getOptions(requestOptions, defaultOptions) {
 	} else {
 		options = { ...defaultOptions, ...requestOptions };
 	}
-	const timeout =
-		!options.timeout || typeof options.timeout === "number"
-			? {
-					total: options.timeout ?? 10000,
-			  }
-			: options.timeout;
+
+	const response =
+		!options.response || typeof options.response === "string" || typeof options.response === "boolean" ? { body: options.response } : options.response;
+	const timeout = !options.timeout || typeof options.timeout === "number" ? { total: options.timeout ?? 10000 } : options.timeout;
 	const retry =
 		options.retry != undefined
 			? typeof options.retry === "number" || typeof options.retry === "function"
-				? {
-						attempts: options.retry,
-				  }
+				? { attempts: options.retry }
 				: options.retry
 			: undefined;
 
 	return {
 		...options,
 		url: getUrl(options.url),
+		response,
 		timeout,
 		retry,
 	};
@@ -86,7 +83,7 @@ export function checkRetry(attempt, err, options) {
 	}
 	// should retry function
 	if (typeof options.attempts === "function") {
-		const res = options(attempt, err);
+		const res = options.attempts(attempt, err);
 		if (res !== true) {
 			return res;
 		}
