@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "2.2.0",
+	"version": "3.0.0",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -20,7 +20,7 @@
 	"homepage": "https://github.com/Kilcekru/libraries/tree/main/packages/ts-basics#readme",
 	"bugs": "https://github.com/Kilcekru/libraries/issues",
 	"engines": {
-		"node": ">=12"
+		"node": ">=16"
 	},
 	"files": [
 		".eslintrc.js",
@@ -31,16 +31,23 @@
 		"tsconfig-react-library.json"
 	],
 	"sideEffects": false,
+	"scripts": {
+		"clean:all": "rimraf node_modules"
+	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "4.18.0",
-		"@typescript-eslint/parser": "4.18.0",
-		"eslint": "7.22.0",
-		"eslint-config-prettier": "8.1.0",
-		"eslint-plugin-import": "2.22.1",
-		"eslint-plugin-react": "7.22.0",
-		"eslint-plugin-react-hooks": "4.2.0"
+		"@typescript-eslint/eslint-plugin": "^5.4.0",
+		"@typescript-eslint/parser": "^5.4.0",
+		"eslint": "^8.3.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-import-resolver-typescript": "^2.5.0",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-react": "^7.27.1",
+		"eslint-plugin-react-hooks": "^4.3.0"
 	},
 	"peerDependencies": {
-		"typescript": ">=4.1"
+		"typescript": ">=4.3"
+	},
+	"devDependencies": {
+		"rimraf": "^3.0.2"
 	}
 }

@@ -1,14 +1,17 @@
 {
 	"compilerOptions": {
+		"allowUnusedLabels": false,
 		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
 		"moduleResolution": "node",
 		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
 		"noImplicitReturns": true,
 		"noUncheckedIndexedAccess": true,
 		"preserveWatchOutput": true,
 		"removeComments": true,
 		"skipLibCheck": true,
-		"sourceMap": false,
+		"sourceMap": true,
 		"strict": true
 	},
 	"compileOnSave": false

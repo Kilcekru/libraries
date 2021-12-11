@@ -10,15 +10,15 @@ Provides basic configuration for typescript and eslint.
 
 `npm i -D @kilcekru/ts-basics`
 
-ts-basics has a peer dependency on typescript >= 4.1  
+ts-basics has a peer dependency on typescript >= 4.3  
 `npm i -D typescript@latest`
 
 ## tsconfig
 
 There are four flavours available:
-- `tsconfig-node-app`: for node >=12; use this for nodejs apps
-- `tsconfig-node-library`: for node >=12; use this for libraries (enables declaration files)
-- `tsconfig-react-app`: for browser; use this for react apps (es2019 is used, support for older browsers not given)
+- `tsconfig-node-app`: for node >=16; use this for nodejs apps
+- `tsconfig-node-library`: for node >=16; use this for libraries (enables declaration files)
+- `tsconfig-react-app`: for browser; use this for react apps (es2021 is used, support for older browsers not given)
 - `tsconfig-react-library`: for browser, use this for libraries (enables declaration files)
 
 To use one of those flavours, just extend your tsconfig from it:  
