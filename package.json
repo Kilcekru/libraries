@@ -16,7 +16,7 @@
 		"url": "git+https://github.com/Kilcekru/libraries.git"
 	},
 	"engines": {
-		"node": ">=12"
+		"node": ">=16"
 	},
 	"config": {
 		"commitizen": {
@@ -25,18 +25,17 @@
 	},
 	"scripts": {
 		"cz": "cz",
-		"clean:all": "lerna exec -- rm -rf node_modules dist && rm -rf node_modules",
-		"build": "lerna run build",
-		"lint": "lerna run lint",
-		"lint:nocache": "lerna run lint:nocache",
+		"clean": "npm run clean --ws --if-present",
+		"clean:all": "npm run clean:all --ws --if-present && rimraf node_modules",
+		"build": "npm run build --ws --if-present",
+		"lint": "npm run lint --ws --if-present",
 		"prettier": "prettier --check .",
-		"prettier:fix": "prettier --write .",
-		"setup": "npm ci && lerna bootstrap --ci"
+		"prettier:fix": "prettier --write ."
 	},
 	"devDependencies": {
 		"commitizen": "^4.2.3",
 		"cz-conventional-changelog": "^3.3.0",
-		"lerna": "^4.0.0",
-		"prettier": "^2.3.0"
+		"prettier": "^2.3.0",
+		"rimraf": "^3.0.2"
 	}
 }
