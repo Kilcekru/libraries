@@ -2,7 +2,7 @@ import { PassThrough } from "stream";
 
 import { Response } from "node-fetch";
 
-import { request } from "..";
+import { request } from "../..";
 
 import { url } from "./config";
 

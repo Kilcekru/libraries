@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { mocked } from "ts-jest/utils";
 
-import { request, TimeoutError, AbortController } from "..";
+import { request, TimeoutError, AbortController } from "../..";
 
 import { url, urlTimeout, urlTimeoutBody } from "./config";
 

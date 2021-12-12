@@ -1,4 +1,4 @@
 {
 	"extends": "@kilcekru/ts-basics/tsconfig-node-library.json",
-	"include": ["index.d.ts"]
+	"include": ["**/*.ts"]
 }

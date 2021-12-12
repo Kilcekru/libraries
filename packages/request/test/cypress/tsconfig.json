@@ -1,0 +1,7 @@
+{
+	"extends": "@kilcekru/ts-basics/tsconfig-react-library.json",
+	"compilerOptions": {
+		"types": ["cypress"]
+	},
+	"include": ["**/*.ts", "support/index.ts", "plugins/index.ts"]
+}

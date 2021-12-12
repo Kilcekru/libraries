@@ -5,7 +5,7 @@ import { URL } from "url";
 import fetch from "node-fetch";
 import { mocked } from "ts-jest/utils";
 
-import { request } from "..";
+import { request } from "../..";
 
 import { url } from "./config";
 

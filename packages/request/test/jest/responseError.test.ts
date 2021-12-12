@@ -1,4 +1,4 @@
-import { request, ResponseError } from "..";
+import { request, ResponseError } from "../..";
 
 import { url, urlStatus } from "./config";
 

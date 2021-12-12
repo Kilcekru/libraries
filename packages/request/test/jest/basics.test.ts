@@ -3,7 +3,7 @@ import { URL } from "url";
 import fetch from "node-fetch";
 import { mocked } from "ts-jest/utils";
 
-import { request, ResponseError, FetchError, setDefaultOptions, DefaultOptions, AbortSignal } from "..";
+import { request, ResponseError, FetchError, setDefaultOptions, DefaultOptions, AbortSignal } from "../..";
 
 import { url, urlError, urlStatus } from "./config";
 
