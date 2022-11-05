@@ -40,7 +40,10 @@ You still have to add `include`, `outDir`,...
 
 ## eslint
 
-The base config for eslint is available at `.eslintrc.js`.  
+There are three flavours available:
+- `.eslintrc.js`: base config, no environment set
+- `.eslintrc.node.js`: environment set for nodejs
+- `.eslintrc.react.js`: extends for react rules, environment set for browser
 To use it just extend your eslintrc from this file.
 
 *Example*:

@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -9,7 +9,7 @@
 	],
 	"license": "ISC",
 	"author": {
-		"name": "Andreas Lackinger",
+		"name": "Kilcekru",
 		"email": "kilcekru@unkreativ.at"
 	},
 	"repository": {
@@ -24,6 +24,8 @@
 	},
 	"files": [
 		".eslintrc.js",
+		".eslintrc.node.js",
+		".eslintrc.react.js",
 		"tsconfig-base.json",
 		"tsconfig-node-app.json",
 		"tsconfig-node-library.json",
@@ -35,14 +37,14 @@
 		"clean:all": "rimraf node_modules"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.4.0",
-		"@typescript-eslint/parser": "^5.4.0",
-		"eslint": "^8.3.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-import-resolver-typescript": "^2.5.0",
-		"eslint-plugin-import": "^2.25.3",
-		"eslint-plugin-react": "^7.27.1",
-		"eslint-plugin-react-hooks": "^4.3.0"
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-react": "^7.31.10",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-simple-import-sort": "^8.0.0"
 	},
 	"peerDependencies": {
 		"typescript": ">=4.3"
