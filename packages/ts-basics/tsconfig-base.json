@@ -3,7 +3,6 @@
 		"allowUnusedLabels": false,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"incremental": true,
 		"moduleResolution": "node",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
