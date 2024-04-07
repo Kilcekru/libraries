@@ -1,6 +1,6 @@
 {
 	"name": "@kilcekru/ts-basics",
-	"version": "3.1.1",
+	"version": "3.2.0",
 	"description": "Configuration for typescript and eslint",
 	"keywords": [
 		"typescript",
@@ -37,14 +37,14 @@
 		"clean:all": "rimraf node_modules"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.42.0",
-		"@typescript-eslint/parser": "^5.42.0",
-		"eslint": "^8.26.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-react": "^7.31.10",
+		"@typescript-eslint/eslint-plugin": "^7.5.0",
+		"@typescript-eslint/parser": "^7.5.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-simple-import-sort": "^8.0.0"
+		"eslint-plugin-simple-import-sort": "^12.0.0"
 	},
 	"peerDependencies": {
 		"typescript": ">=4.3"
